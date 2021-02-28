@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Pràctica cementiri</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%
+        }
+    </style>
+    <script>
+        //Añadir vuestor token y vuestro estilo
+        function init() {
+            mapboxgl.accessToken =
+                'pk.eyJ1IjoiZGFuaWVsY2JjbiIsImEiOiJja2pyMnk2eHAyNHloMzBtajdkbHlya3JoIn0.o6Ljwhw2Lc164uIJs4q3LA';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/danielcbcn/cklp2zs335utw17nnzxz8xr0d',
+                center: [2.837192, 41.971905],
+                zoom: 17,
+                attributionControl: false,
+                hash:true
+            });
+            map.addControl(new mapboxgl.AttributionControl({compact: true}));
+            map.addControl(new mapboxgl.NavigationControl());
+
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div id="map"></div>
+</body>
+
+</html>  
